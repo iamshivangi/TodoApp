@@ -2,10 +2,20 @@
 'use strict'
 document.addEventListener("DOMContentLoaded", function(event) {
     // - Code to execute when all DOM content is loaded. 
+
+  
+
+
   let todoItems=[];//Array to store the todos
 
      function renderTodo(todo){
     //function to render todo on the screen
+
+    let update= document.querySelector('#list-title');
+    update.innerHTML= `<h1>You have ${todoItems.filter((todo)=>todo.checked==false).length} To Dos Left</h1>`;
+   
+
+
          const list = document.querySelector('#list-items');
       
 
@@ -13,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
          if(todo.deleted!=undefined)
          {
              existing.remove();
+             
              return;
          }
 
@@ -27,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     item.innerHTML= `
 
-    <span>
+    <div>
     <input id ="${todo.id}" class ="tick" type ="checkbox" />
     <label for = "${todo.id}"></label>
     <span class ="todo-text">${todo.text}</span>
-    </span>
+    </div>
     
     <button class="delete-todo">Remove</button>  
         
@@ -46,11 +57,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
        if(todo.checked==true)
         {item.innerHTML= `
 
-        <span>
+        <div class="ohhello">
         <input id ="${todo.id}" class ="tick" type ="checkbox" checked/>
         <label for = "${todo.id}"></label>
         <span class ="todo-text">${todo.text}</span>
-        </span>
+        </div>
         
         <button class="delete-todo">Remove</button>  
             
@@ -202,7 +213,7 @@ function hiderfunc(event){
 
 
 
-
+//filtering
 
 let filter = document.querySelector('#filter')
 filter.addEventListener('keyup', (event)=>{
@@ -226,6 +237,13 @@ filter.addEventListener('keyup', (event)=>{
 
 
 })
+
+
+
+
+
+
+
 
 
 

@@ -104,11 +104,10 @@ li{
 
 
 }
-.todotext{
+.todo-text{
     align-self: flex-start;
 }
 .delete-todo{
     background-color:inherit;
     border:none;
 }
-
