@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const list = document.querySelector('#list-items');
 
     const existing = document.querySelector(`[data-key='${todo.id}']`);
-    if ( todo.deleted ===true) {
+    if (todo.deleted === true) {
       existing.remove();
 
       return;

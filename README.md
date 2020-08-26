@@ -1,0 +1,1 @@
+Uncomment script tag to use Vanilla based JS script in index.html
